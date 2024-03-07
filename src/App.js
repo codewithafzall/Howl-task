@@ -21,6 +21,10 @@ function App() {
     return () => clearTimeout(delay);
   }, []);
 
+  const isMobileOrTablet = () => {
+    return window.innerWidth <= 768;
+  };
+
   return (
     <>
       {showDown ? (
@@ -35,7 +39,7 @@ function App() {
           <Footer />
         </div>
       )}
-      <AnimateCursor/>
+      {!isMobileOrTablet() && <AnimateCursor />}
     </>
   );
 }
