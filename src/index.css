@@ -18,6 +18,13 @@ body {
     font-weight: 800;
 }
 
+.animatedText{
+    font-size: 72px;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 @media (max-width: 575.98px){
 
   .custom-font{

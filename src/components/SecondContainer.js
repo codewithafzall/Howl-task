@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Strategy from "../assets/Strategy.png";
 import Online from "../assets/Online.png";
 import Commerce from "../assets/Commerces.png";
+import purple from "../assets/commerce.png";
 import Aos from "aos";
 import 'aos/dist/aos.css';
+
 
 const SecondContainer = () => {
 
@@ -35,9 +37,9 @@ const SecondContainer = () => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-col lg:flex-row" style={{backgroundColor: tabBgColors[activeTab]}}>
-        <div className="w-full lg:w-4/12 py-8 lg:border-r-2">
-          <div data-aos="fade-up" className="px-5 lg:mb-10">
+      <div data-aos="slide-up" data-aos-delay="300" className="flex flex-col md:flex-col lg:flex-row" style={{backgroundColor: tabBgColors[activeTab]}}>
+        <div className="w-full lg:w-4/12 py-8 pl-2 lg:border-r-2">
+          <div data-aos="slide-up" className="px-5 lg:mb-10">
             {tabs.map((tab, index) => (
               <button
                 key={index}
@@ -52,7 +54,7 @@ const SecondContainer = () => {
               </button>
             ))}
           </div>
-          <div>
+          <div data-aos="slide-up">
           {activeTab === tabs[0] && (
             <div className="text-white p-8 w-full lg:w-3/4 border-t-2 border-l-2 border-b-2 flex flex-col justify-center ml-auto">
               <button className="bg-white text-black mb-4 rounded-md text-sm px-4 py-2">
@@ -106,7 +108,7 @@ const SecondContainer = () => {
           )}
           </div>
         </div>
-        <div className="w-full lg:w-8/12 lg:p-10">
+        <div data-aos="slide-up" className="w-full lg:w-8/12 lg:p-10">
           {activeTab === tabs[0] && <img src={Strategy} className="w-full" />}
           {activeTab === tabs[1] && <img src={Online} className="w-full" />}
           {activeTab === tabs[2] && <img src={Commerce} className="w-full" />}

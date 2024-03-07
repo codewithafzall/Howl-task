@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -13,8 +13,15 @@ import image8 from "../assets/Layer 21.png";
 import image9 from "../assets/Layer 22 copy.png";
 import image10 from "../assets/Layer 23.png";
 import image11 from "../assets/Layer 24.png";
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const Clients = () => {
+
+  useEffect(()=>{
+    Aos.init();
+  },[]);
+
     const images = [image1,image1, image2, image3,image3, image4, image5,image5, image6, image7,image7, image8, image9,image9, image10, image11];
 
     const settings = {
@@ -40,7 +47,7 @@ const Clients = () => {
     return (
         <>
       <div className="bg-[#f6f7fc] px-7 py-12">
-        <h1 className='text-[#bd72d3] my-5 md:text-3xl md:ml-14 md:my-7 lg:text-5xl font-bold lg:ml-28 lg:my-10'>Clients we work with</h1>
+        <h1 data-aos="slide-up" className='text-[#bd72d3] my-5 md:text-3xl md:ml-14 md:my-7 lg:text-5xl font-bold lg:ml-28 lg:my-10'>Clients we work with</h1>
         <div className='block md:hidden lg:hidden'>
         <Slider {...settings}>
         {images.map((image, index) => (
@@ -62,12 +69,12 @@ const Clients = () => {
         </div>
 
         <div className='hidden lg:block'>
-        <div className="flex justify-evenly">
+        <div data-aos="slide-up" className="flex justify-evenly">
           {images.slice(0, 8).map((image, index) => (
             <img key={index} src={image} className="w-40" />
           ))}
         </div>
-        <div className="flex justify-evenly mt-10">
+        <div data-aos="slide-up" className="flex justify-evenly mt-10">
           {images.slice(8).map((image, index) => (
             <img key={index} src={image} className="w-40" />
           ))}
@@ -75,7 +82,7 @@ const Clients = () => {
         </div>
       </div>
       <div>
-        <h1 className='text-center my-7 text-[#757575] font-bold text-xl md:text-2xl lg:text-4xl px-5'>Ready to accelerate your business? <span className='text-[#bd72d3] border-b-2'>Let's talk.</span></h1>
+        <h1 data-aos="zoom-in" data-aos-delay="300" data-aos-duration="600" className='text-center my-7 text-[#757575] font-bold text-xl md:text-2xl lg:text-4xl px-5'>Ready to accelerate your business? <span className='text-[#bd72d3] border-[#e7b6e5] border-b-4'>Let's talk.</span></h1>
       </div>
       </>
   )
